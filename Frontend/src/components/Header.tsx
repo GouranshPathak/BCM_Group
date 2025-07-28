@@ -68,12 +68,13 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Button className="btn-primary">
-              Get Quote
-            </Button>
+          <div className="pt-4">
+            <a href="tel:+911234567890">
+              <Button className="btn-primary w-full">
+                    Call Now
+                </Button>
+              </a>
           </div>
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
