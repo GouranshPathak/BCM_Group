@@ -144,13 +144,6 @@ const AdminLogin = () => {
             </form>
 
             {/* Demo Credentials */}
-            <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-              <p className="text-sm text-muted-foreground text-center mb-2">Demo Credentials:</p>
-              <div className="text-xs text-center">
-                <p><strong>Username:</strong> admin</p>
-                <p><strong>Password:</strong> admin123</p>
-              </div>
-            </div>
           </CardContent>
         </Card>
 

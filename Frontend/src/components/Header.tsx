@@ -103,9 +103,11 @@ const Header = () => {
                   </Link>
                 ))}
                 <div className="pt-4">
-                  <Button className="btn-primary w-full">
-                    Get Quote
-                  </Button>
+                  <a href="tel:+911234567890">
+                    <Button className="btn-primary w-full">
+                      Call Now
+                    </Button>
+                  </a>
                 </div>
               </div>
             </nav>
