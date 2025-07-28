@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BCM Group Design System - Real Estate & Construction */
+
+@layer base {
+  :root {
+    /* Primary Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 210 11% 15%;
+    
+    /* BCM Brand Colors */
+    --primary: 0 73% 41%; /* BCM Red */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 0 73% 50%;
+    --primary-dark: 0 73% 30%;
+    
+    /* Neutral Grays */
+    --secondary: 210 11% 96%; /* Light Grey */
+    --secondary-foreground: 210 11% 15%;
+    --muted: 210 11% 71%; /* Medium Grey */
+    --muted-foreground: 210 11% 46%;
+    --dark: 210 11% 15%; /* Dark Grey */
+    --dark-foreground: 0 0% 100%;
+    
+    /* Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 11% 15%;
+    
+    /* Accent & Interactive */
+    --accent: 210 11% 96%;
+    --accent-foreground: 210 11% 15%;
+    --destructive: 0 73% 41%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Form Elements */
+    --border: 210 11% 82%;
+    --input: 210 11% 96%;
+    --ring: 0 73% 41%;
+    
+    /* Design Tokens */
+    --radius: 0.75rem;
+    
+    /* Shadows & Effects */
+    --shadow-soft: 0 4px 6px -1px hsl(210 11% 15% / 0.1);
+    --shadow-medium: 0 10px 15px -3px hsl(210 11% 15% / 0.1);
+    --shadow-large: 0 25px 50px -12px hsl(210 11% 15% / 0.25);
+    --shadow-red: 0 10px 30px -10px hsl(0 73% 41% / 0.3);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 73% 41%), hsl(0 73% 50%));
+    --gradient-subtle: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 11% 96%));
+    --gradient-dark: linear-gradient(135deg, hsl(210 11% 15%), hsl(210 11% 25%));
+    
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary-light active:bg-primary-dark transition-all duration-300 font-medium px-8 py-3 rounded-xl shadow-lg hover:shadow-red hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-muted border border-border transition-all duration-300 font-medium px-8 py-3 rounded-xl shadow-sm hover:shadow-medium;
+  }
+  
+  .btn-ghost {
+    @apply text-foreground hover:bg-secondary/50 transition-all duration-300 font-medium px-6 py-3 rounded-xl;
+  }
+
+  /* Card Components */
+  .card-elevated {
+    @apply bg-card rounded-2xl shadow-medium hover:shadow-large transition-all duration-500 border border-border/50;
+  }
+  
+  .card-service {
+    @apply card-elevated p-8 hover:scale-105 cursor-pointer;
+  }
+
+  /* Text Effects */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent;
+  }
+  
+  .heading-xl {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-tight;
+  }
+  
+  .heading-lg {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight;
+  }
+  
+  .heading-md {
+    @apply text-2xl md:text-3xl font-semibold leading-tight;
+  }
+
+  /* Animations */
+  .animate-fade-in-up {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .animate-fade-in-up.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .animate-scale-in {
+    @apply scale-95 opacity-0 transition-all duration-500 ease-out;
+  }
+  
+  .animate-scale-in.in-view {
+    @apply scale-100 opacity-100;
+  }
+
+  /* Hero Background */
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.95), hsl(210 11% 96% / 0.9)), var(--gradient-subtle);
+  }
+  
+  /* Section Spacing */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
